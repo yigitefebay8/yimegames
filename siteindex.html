@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyun Portfolyom</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
+        header { background: #333; color: white; padding: 20px; text-align: center; }
+        header h1 { margin: 0; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 20px; }
+        .games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .game-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+        .game-card img { width: 100%; height: 200px; object-fit: cover; }
+        .game-card h3 { padding: 10px; }
+        .game-card p { padding: 0 10px 20px; }
+        .play-btn { background: #007bff; color: white; padding: 10px 20px; border: none; cursor: pointer; margin-bottom: 20px; border-radius: 5px; }
+        .adsense-banner { text-align: center; margin: 40px 0; min-height: 100px; background: #eee; } /* Buraya AdSense banner kodu yapıştır */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
+        .modal iframe { width: 90%; height: 90%; border: none; }
+        footer { background: #333; color: white; text-align: center; padding: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Benim Oyun Portfolyom</h1>
+        <p>AdSense Uyumlu HTML5 Oyunlarım</p>
+    </header>
+
+    <div class="container">
+        <!-- AdSense Banner Alanı (Üst) -->
+        <div class="adsense-banner">
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1198714971337229"
+     crossorigin="anonymous"></script>
+<!-- banner -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1198714971337229"
+     data-ad-slot="3637380062"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <div class="games-grid">
+            <!-- Oyun Kartı Örneği 1 -->
+            <div class="game-card">
+                <img src="https://via.placeholder.com/300x200?text=Oyun+1+Screenshot" alt="Oyun 1">
+                <h3>Oyun 1: Platform Macerası</h3>
+                <p>Kendi yaptığım basit bir platform oyunu. Toplam 10 seviye.</p>
+                <button class="play-btn" onclick="openGame('https://senin-oyun1-domain.com/index.html')">Oyna</button>
+            </div>
+
+            <!-- Oyun Kartı Örneği 2 -->
+            <div class="game-card">
+                <img src="https://via.placeholder.com/300x200?text=Oyun+2+Screenshot" alt="Oyun 2">
+                <h3>Oyun 2: Bulmaca Oyunu</h3>
+                <p>Renk eşleştirme bulmacası, sonsuz mod.</p>
+                <button class="play-btn" onclick="openGame('https://senin-oyun2-domain.com/index.html')">Oyna</button>
+            </div>
+
+            <!-- Daha fazla oyun ekle, kopyala-yapıştır yeter -->
+        </div>
+
+        <!-- AdSense Banner Alanı (Alt) -->
+        <div class="adsense-banner">
+            <!-- Buraya başka bir AdSense kodu yapıştır -->
+        </div>
+    </div>
+
+    <!-- Modal: Tam ekran oyun oynatma -->
+    <div class="modal" id="gameModal" onclick="closeGame()">
+        <iframe id="gameFrame" src=""></iframe>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Tüm hakları saklıdır. İletişim: email@ornek.com</p>
+    </footer>
+
+    <script>
+        function openGame(url) {
+            document.getElementById('gameFrame').src = url;
+            document.getElementById('gameModal').style.display = 'flex';
+        }
+        function closeGame() {
+            document.getElementById('gameModal').style.display = 'none';
+            document.getElementById('gameFrame').src = '';
+        }
+    </script>
+</body>
+</html>
